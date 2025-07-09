@@ -1,6 +1,6 @@
 'use client';
 
-import { Target, Rocket, BarChart3, Network, Brain, HelpCircle, Award } from 'lucide-react';
+import { Rocket, BarChart3, Network, Brain, HelpCircle, Award } from 'lucide-react';
 import SectionBlock from './SectionBlock';
 
 const sections = [
@@ -64,22 +64,18 @@ const sections = [
 
 export default function CoursePlan() {
   return (
-    <div className="max-w-4xl mx-auto">
-      {/* Section Header */}
-      <div className="text-center mb-8">
-        <div className="flex items-center justify-center gap-2 mb-4">
-          <Target className="h-6 w-6 text-blue-600" />
-          <h2 className="text-2xl font-bold text-gray-900">
+    <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
             Plan du cours
           </h2>
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-4">
+            Découvrez les différentes sections de ce chapitre sur les processus et systèmes d&apos;information
+          </p>
         </div>
-        <p className="text-gray-600 text-lg">
-          Suivez le parcours structuré pour maîtriser les processus et systèmes d&apos;information
-        </p>
-      </div>
 
-      {/* Sections */}
-      <div className="space-y-4">
+        <div className="space-y-4 sm:space-y-6">
         {sections.map((section, index) => (
           <SectionBlock
             key={section.href}
@@ -87,7 +83,8 @@ export default function CoursePlan() {
             index={index}
           />
         ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
